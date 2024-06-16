@@ -18,8 +18,8 @@
                 <span class="navbar-toggle-icon"></span>
             </div>
             <div class="navbar-links" id="navbar-links">
-                <a href="#">Menu</a>
-                <a href="#">Order Online</a>
+                <a href="menu">Menu</a>
+                <a href="welcome">Home</a>
             </div>
         </nav>
     </header>
