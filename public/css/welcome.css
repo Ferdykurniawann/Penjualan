@@ -54,7 +54,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    background-color: rgba(44, 62, 80, 0.8);
+    background-color: rgb(38 39 41 / 80%);
     position: relative;
     height: 50vh;
     flex-direction: column;
@@ -92,8 +92,8 @@ body {
     cursor: pointer;
     transition: background-color 0.3s;
     position: absolute;
-    bottom: 2rem;
-    left: 50%;
+    bottom: 4rem;
+    left: 40%;
     transform: translateX(-50%);
     animation: pulse 1s infinite;
 }

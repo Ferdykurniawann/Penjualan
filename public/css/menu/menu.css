@@ -12,7 +12,6 @@ body {
     align-items: center;
     background-color: rgba(51, 51, 51, 0.8);
     padding: 1rem 2rem;
-    animation: fadeIn 2s ease-in-out;
 }
 
 .navbar-brand img {
@@ -48,74 +47,6 @@ body {
     color: #f39c12;
 }
 
-/* Hero Section Styles */
-.hero-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    background-color: rgba(44, 62, 80, 0.8);
-    position: relative;
-    height: 50vh;
-    flex-direction: column;
-    animation: fadeIn 2s ease-in-out;
-    text-align: center;
-}
-
-.hero-text h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: #f39c12;
-    animation: slideInDown 1s ease-out;
-}
-
-.hero-text p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    animation: slideInUp 1s ease-out;
-}
-
-.btn-order {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background-color: #f39c12;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    animation: pulse 1s infinite;
-}
-
-.btn-order:hover {
-    background-color: #e67e22;
-}
-
-.hero-images {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-images img {
-    width: 380px;
-    margin: 0 1rem;
-    animation: bounceIn 2s;
-}
-
-.pizza-left {
-    position: relative;
-    left: 422px;
-}
-
-.pizza-right {
-    position: relative;
-    right: 920px;
-}
-
 /* Sales Section Styles */
 .sales-section {
     padding: 2rem;
@@ -136,6 +67,12 @@ body {
     width: 200px;
     text-align: center;
     color: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .card h2 {
@@ -163,6 +100,11 @@ body {
     margin-top: 0.2rem;
 }
 
+.price, .status {
+    display: block;
+    margin: 0.5rem 0;
+}
+
 .btn-add {
     display: inline-block;
     padding: 0.5rem 1rem;
@@ -171,11 +113,12 @@ body {
     text-decoration: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .btn-add:hover {
     background-color: #e67e22;
+    transform: translateY(-5px);
 }
 
 .btn-submit {
@@ -187,11 +130,12 @@ body {
     text-decoration: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .btn-submit:hover {
     background-color: #e67e22;
+    transform: translateY(-5px);
 }
 
 #results {
@@ -199,58 +143,26 @@ body {
     background-color: rgba(51, 51, 51, 0.8);
     padding: 1rem;
     border-radius: 5px;
+}
+
+#sales-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#sales-table th, #sales-table td {
+    padding: 0.8rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#sales-table th {
+    background-color: #f39c12;
     color: white;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideInDown {
-    from {
-        transform: translateY(-100%);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideInUp {
-    from {
-        transform: translateY(100%);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes bounceIn {
-    from {
-        transform: scale(0.5);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
+#sales-table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Responsive Styles */
@@ -272,53 +184,8 @@ body {
         padding: 1rem;
         border-top: 1px solid #444;
     }
-    .hero-section {
-        text-align: center;
-    }
-    .hero-text {
-        max-width: 100%;
-    }
-    .hero-images {
-        position: static;
-        margin-top: 1rem;
-    }
-    .hero-images img {
-        width: 150px;
-        margin: 0.5rem;
-    }
     .card-container {
         flex-direction: column;
         align-items: center;
     }
-}
-.sales-results {
-    padding: 2rem;
-    background-color: rgba(0, 0, 0, 0.7);
-    margin-top: 2rem;
-    color: white;
-}
-
-.table-container {
-    overflow-x: auto;
-    margin-top: 1rem;
-}
-
-#sales-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-#sales-table th, #sales-table td {
-    padding: 0.8rem;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-#sales-table th {
-    background-color: #f39c12;
-    color: white;
-}
-
-#sales-table tbody tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.1);
 }
